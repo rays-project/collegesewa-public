@@ -39,7 +39,7 @@ const FullVideoTestimonials = () => {
   return (
     <section className="full-video-testimonials">
       <div className="container">
-        <h2 className="section-title">Student's Testimonials</h2>
+        <h2 className="section-titles">Student's Testimonials</h2>
         <p className="section-subtitle">
           Hear from our successful students who found their perfect college match
         </p>

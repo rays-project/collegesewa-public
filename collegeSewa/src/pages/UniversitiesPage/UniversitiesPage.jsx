@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./UniversitySection.css";
 
 const universities = [
@@ -20,7 +19,7 @@ const UniversitySection = () => {
     <section className="university-section py-5">
       <div className="overlay"></div>
       <div className="container position-relative text-center">
-        <h2 className="section-title mb-3 animate-fade">
+        <h2 className="section-title titl  settop mb-3 animate-fade ">
           🎓 Explore 100+ Top Online Universities
         </h2>
         <p className="section-subtitle mb-5 animate-fade">
