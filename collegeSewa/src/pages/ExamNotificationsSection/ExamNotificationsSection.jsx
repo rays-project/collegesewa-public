@@ -1,5 +1,5 @@
 import React from "react";
-import "./examNotificationsSection.css";
+import "./ExamNotificationsSection.css";
 
 const exams = [
   { tag: "Urgent", color: "red", name: "JEE Main", title: "JEE Main 2025 - January Session", status: "Application Open", deadline: "15 Dec 2024", date: "24-30 Jan 2025" },
