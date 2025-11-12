@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./applicationStartSection.css";
+import "./ApplicationStartSection.css";
 
 const ApplicationStartSection = () => {
   return (
