@@ -1,0 +1,180 @@
+.university-section {
+  position: relative;
+  color: #0d1b2a;
+  background: linear-gradient(135deg, #f9fbff 0%, #e8f0ff 100%);
+  overflow: hidden;
+}
+
+.university-section::before {
+  content: "";
+  background: url("https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1920&q=80")
+    center/cover no-repeat;
+  opacity: 0.18;
+  filter: blur(5px);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: scale(1.05);
+}
+
+.overlay {
+  background: radial-gradient(circle at top left, rgba(0, 60, 255, 0.15), rgba(255, 255, 255, 0.8));
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  backdrop-filter: blur(3px);
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #012970 !important;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.section-subtitle {
+  color: #334155;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.university-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  padding: 25px 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 40, 120, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.university-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 60, 180, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.glow-border {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.4), rgba(150, 80, 255, 0.4));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.university-card:hover .glow-border {
+  opacity: 1;
+  filter: blur(10px);
+}
+
+.rank-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg, #ffb703, #ffaa00);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(255, 183, 3, 0.6);
+}
+
+.uni-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #002b5b;
+  margin-top: 10px;
+}
+
+.course-count {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.divider {
+  height: 3px;
+  background: linear-gradient(90deg, #004aad, #8b5cf6);
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+
+.rating {
+  color: #f4b400;
+  font-weight: 600;
+}
+
+.students {
+  font-weight: 500;
+  color: #007bff;
+}
+
+/* View more button */
+.view-more-btn {
+  background: linear-gradient(90deg, #0055ff, #7c3aed);
+  color: #fff;
+  border: none;
+  border-radius: 35px;
+  padding: 12px 32px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 64, 173, 0.25);
+}
+
+.view-more-btn:hover {
+  background: linear-gradient(90deg, #7c3aed, #0055ff);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 74, 173, 0.35);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  .university-card {
+    padding: 18px;
+  }
+}

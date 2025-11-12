@@ -1,0 +1,62 @@
+.topbar {
+  background: linear-gradient(90deg, #004aad, #007bff);
+  color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.brand-name {
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #fff;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 600px; /* Wider search bar */
+  position: relative;
+}
+
+.search-input {
+  border-radius: 50px 0 0 50px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-search {
+  background-color: #ffc107 !important;
+  color: #000;
+  font-weight: 600;
+  border-radius: 0 50px 50px 0;
+  padding: 12px 25px;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.btn-search:hover {
+  background-color: #ffca2c;
+}
+
+.social-icons .icon {
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.sewa{
+    color: rgb(77, 244, 5);
+}

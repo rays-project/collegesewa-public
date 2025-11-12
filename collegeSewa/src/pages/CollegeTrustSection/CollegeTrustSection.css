@@ -1,0 +1,77 @@
+.trust-section {
+  position: relative;
+  background-image: url("https://images.pexels.com/photos/3184632/pexels-photo-3184632.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 100px 20px;
+}
+
+.trust-overlay {
+  background: rgba(0, 30, 70, 0.7);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 60px 0;
+  border-radius: 10px;
+}
+
+.trust-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.trust-title span {
+  color: #00b3ff;
+  background: linear-gradient(90deg, #00b3ff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trust-subtitle {
+  font-size: 1.1rem;
+  color: #e0e9ff;
+}
+
+.trust-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 40px 20px;
+  transition: 0.4s ease;
+  backdrop-filter: blur(6px);
+}
+
+.trust-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.trust-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00b3ff;
+  margin-bottom: 8px;
+}
+
+.trust-card p {
+  color: #fff;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trust-title {
+    font-size: 1.8rem;
+  }
+  .trust-card h3 {
+    font-size: 1.6rem;
+  }
+  .trust-card {
+    padding: 30px 15px;
+  }
+}

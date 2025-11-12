@@ -1,0 +1,145 @@
+.student-success-section {
+  position: relative;
+  color: white;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+/* Animated Gradient Background */
+.animated-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #003973, #e5e5be, #1a2980, #26d0ce);
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
+  z-index: 0;
+  filter: brightness(0.7);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.success-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.success-title span {
+  color: #00e5ff;
+}
+
+.success-subtitle {
+  color: #e0f2fe;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Scrolling Animation */
+.scroll-row {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+.scroll-track {
+  display: inline-flex;
+  animation: scroll 28s linear infinite;
+}
+
+.scroll-row.right-left .scroll-track {
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Card Styles */
+.student-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 25px 30px;
+  margin: 0 18px;
+  width: 220px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.student-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+}
+
+/* Photo */
+.student-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.student-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #00e5ff;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.student-card h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.college-name {
+  font-size: 0.9rem;
+  color: #a5f3fc;
+  margin-bottom: 10px;
+}
+
+/* Company Info */
+.company-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #00e5ff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.company-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .success-title {
+    font-size: 1.8rem;
+  }
+  .student-card {
+    width: 170px;
+    padding: 20px;
+  }
+  .student-img {
+    width: 65px;
+    height: 65px;
+  }
+}

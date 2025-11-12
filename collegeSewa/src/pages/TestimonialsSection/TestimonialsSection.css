@@ -1,0 +1,123 @@
+.full-video-testimonials {
+  background: #fff;
+  padding: 6rem 2rem;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #00fff0, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* Video Card */
+.video-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 255, 200, 0.2);
+}
+
+/* Video / Thumbnail */
+/* Video / Thumbnail - Full Width */
+.video-thumbnail,
+.testimonial-video {
+  width: 90%;           /* Full width */
+  max-width: 100%;       /* Ensure no overflow */
+  max-height: 500px;     /* Keep max height */
+  height: 500px;         /* Fixed height for consistency */
+  object-fit: cover;     /* Cover the container */
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover; /* Thumbnail covers the whole area */
+}
+
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: #00fff0;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 20px 25px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.play-overlay:hover {
+  color: #00ff88;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Student Info */
+.student-info {
+  text-align: center;
+  padding: 15px 10px;
+  background: #f9f9f9;
+}
+
+.student-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.student-info p {
+  font-size: 1rem;
+  color: #00ff88;
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .video-thumbnail,
+  .testimonial-video {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-thumbnail,
+  .testimonial-video {
+    height: 300px;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-thumbnail,
+  .testimonial-video {
+    height: 250px;
+  }
+}

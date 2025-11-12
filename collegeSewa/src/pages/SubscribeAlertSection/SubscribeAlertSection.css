@@ -1,0 +1,137 @@
+.subscribe-pro-section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #b9c9ea 0%, #5381d7 100%);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.subscribe-pro-section::before{
+  content: "";
+  background: url("https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1920&q=80")
+    center/cover no-repeat;
+  opacity: 0.18;
+  filter: blur(5px);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: scale(1.05);
+}
+
+/* Animated gradient circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px); /* slightly less blur */
+  opacity: 0.2; /* lighter circles */
+  animation: floatCircle 12s infinite alternate ease-in-out;
+}
+
+.circle1 { width: 300px; height: 300px; top: 10%; left: 10%; background: radial-gradient(circle, #00fff0, transparent); }
+.circle2 { width: 350px; height: 350px; bottom: 15%; right: 10%; background: radial-gradient(circle, #00ff88, transparent); animation-delay: 2s; }
+.circle3 { width: 250px; height: 250px; bottom: 30%; left: 40%; background: radial-gradient(circle, #009dff, transparent); animation-delay: 4s; }
+.circle4 { width: 400px; height: 400px; top: 25%; right: 30%; background: radial-gradient(circle, #ff6ec7, transparent); animation-delay: 6s; }
+
+@keyframes floatCircle {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-50px) scale(1.1); }
+}
+
+/* Card with lighter transparency */
+.subscribe-card {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #20377e 0%, #031a33 100%); /* lighter, more transparent */
+  backdrop-filter: blur(15px); /* less blur */
+  border-radius: 25px;
+  padding: 60px 40px;
+  max-width: 650px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
+  transition: all 0.4s ease;
+}
+
+.subscribe-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 60px rgba(0, 255, 200, 0.35);
+}
+
+/* Typography */
+.title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00fff0, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2); /* subtle shadow for readability */
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: #e0f7ff;
+  margin-bottom: 45px;
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* Form */
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.input {
+  flex: 1;
+  min-width: 280px;
+  max-width: 370px;
+  padding: 14px 22px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #001a33;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-color: #00fff0;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.5);
+}
+
+.input::placeholder {
+  color: #e0f7ff;
+}
+
+/* Subscribe Button */
+.btn {
+  background: linear-gradient(135deg, #00fff0, #00ff88, #00f0ff);
+  border: none;
+  color: #001a33;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 15px 35px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 10px rgba(14, 231, 184, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title { font-size: 2rem; }
+  .subscribe-card { padding: 40px 25px; }
+}
