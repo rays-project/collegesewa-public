@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaStar, FaUsers, FaRupeeSign, FaUniversity, FaUserGraduate } from "react-icons/fa";
-import './mode.css'
 
 const VideoAndCollegesPage = () => {
   const [currentVideo] = useState("https://www.youtube.com/embed/DWRcNpR6Kdc");
@@ -135,6 +134,47 @@ const VideoAndCollegesPage = () => {
         </div>
       </div>
 
+      {/* Custom styles */}
+      <style>{`
+        .hover-card:hover {
+          transform: translateY(-5px);
+          transition: 0.3s ease;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .college-card:hover {
+          transform: scale(1.02);
+          transition: 0.3s ease;
+          background-color: #fffbea;
+        }
+        .filter-btn {
+          background: white;
+          border: 2px solid #ffc107;
+          color: #333;
+          border-radius: 20px;
+          transition: all 0.3s ease;
+        }
+        .filter-btn:hover {
+          background: #ffe082;
+          color: #000;
+          box-shadow: 0 0 10px rgba(255,193,7,0.6);
+        }
+        .active-filter {
+          background: linear-gradient(90deg, #ffb300, #ffca28);
+          color: #000;
+          border: none;
+          box-shadow: 0 0 15px rgba(255,193,7,0.7);
+        }
+        .list-group::-webkit-scrollbar {
+          display: none;
+        }
+        .view-more-btn {
+          animation: fadeInUp 0.8s ease;
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 };
