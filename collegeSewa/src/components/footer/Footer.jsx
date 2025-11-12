@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="footer-about">
           <h3>About CollegeSewa</h3>
           <p>
-            Your trusted partner in finding the perfect college. We help students make informed decisions about their future.
+            We are your trusted partner in finding the perfect college. We help students make informed decisions about their future.
           </p>
           <div className="social-icons">
             <FaFacebookF />
