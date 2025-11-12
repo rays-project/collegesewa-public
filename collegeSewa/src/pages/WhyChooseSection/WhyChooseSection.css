@@ -24,12 +24,12 @@
 
 /* Card Styling */
 .why-card {
-  background: #fff;
+  background: #e9fef7;
   border-radius: 18px;
   padding: 35px 25px;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 1px solid #e3e8ef;
+  border: 1px solid #4c4f53;
   height: 100%;
   position: relative;
 }
