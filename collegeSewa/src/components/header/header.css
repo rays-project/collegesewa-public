@@ -1,5 +1,5 @@
 /* ===============================
-   Modern Navbar Styling
+   Navbar Base
 ================================== */
 .custom-navbar {
   background: linear-gradient(90deg, #1d2671, #c33764);
@@ -10,7 +10,7 @@
 }
 
 .navbar-brand {
-  letter-spacing: 1px;
+  font-weight: 700;
   transition: transform 0.3s ease;
 }
 
@@ -30,7 +30,7 @@
   transform: translateY(-2px);
 }
 
-/* Dropdown Menu */
+/* Dropdown Menu Base */
 .dropdown-menu {
   border-radius: 10px;
   border: none;
@@ -38,10 +38,37 @@
   animation: fadeIn 0.2s ease-in-out;
 }
 
-.dropdown-item:hover {
-  background-color: #f1f1f1;
+/* Mega Dropdown Styling */
+.mega-dropdown {
+  min-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.mega-dropdown table th {
   color: #1d2671;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid #1d2671;
+  padding-bottom: 8px;
+}
+
+.mega-dropdown table td {
+  padding: 8px 15px;
+}
+
+.dropdown-link {
+  color: #333;
   font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.dropdown-link:hover {
+  color: #00ff88;
+  transform: translateX(3px);
 }
 
 /* Login Button */
@@ -59,7 +86,7 @@
   background-color: #fb8500;
 }
 
-/* Mobile Navbar */
+/* Navbar Toggler */
 .navbar-toggler {
   border: 1px solid white;
 }
@@ -67,43 +94,8 @@
 .navbar-toggler-icon {
   filter: invert(1);
 }
-.mega-dropdown {
-  min-width: 700px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  background: #fff;
-}
 
-.mega-dropdown table th {
-  color: #00ffcc;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  border-bottom: 2px solid #00ffcc;
-  padding-bottom: 8px;
-}
-a{
-  text-decoration: none;
-}
-
-.mega-dropdown table td {
-  padding: 8px 15px;
-}
-
-.dropdown-link {
-  display: inline-block;
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s;
-}
-
-.dropdown-link:hover {
-  color: #00ff88;
-  transform: translateX(3px);
-}
-
-
+/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -115,15 +107,51 @@ a{
   }
 }
 
-/* Responsive */
+/* ===============================
+   Responsive Styles
+================================== */
+
+/* Tablet (≤992px) */
 @media (max-width: 992px) {
+  .mega-dropdown {
+    min-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 400px;
+  }
+
   .navbar-nav .nav-link {
     text-align: center;
     padding: 8px 0;
   }
 
   .btn-login {
-    margin-top: 10px;
+    margin: 10px auto;
+    display: block;
+    width: 80%;
+  }
+}
+
+/* Mobile (≤576px) */
+@media (max-width: 576px) {
+  .mega-dropdown {
+    min-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .dropdown-menu {
     width: 100%;
+  }
+
+  .table th, .table td {
+    padding: 6px;
   }
 }

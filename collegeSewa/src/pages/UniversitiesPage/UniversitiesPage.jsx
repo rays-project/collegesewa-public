@@ -32,7 +32,6 @@ const UniversitySection = () => {
             <div className="col-md-4 col-lg-3 col-sm-6" key={i}>
               <div className="university-card animate-up">
                 <div className="glow-border"></div>
-                <div className="rank-badge">{u.rank}</div>
                 <h5 className="uni-name">{u.name}</h5>
                 <p className="course-count">{u.courses}</p>
                 <div className="divider"></div>
