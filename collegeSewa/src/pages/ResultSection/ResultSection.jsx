@@ -1,5 +1,5 @@
 import React from "react";
-import "./resultSection.css";
+import "./ResultSection.css";
 
 const results = [
   { status: "Expected Soon", exam: "JEE Main 2025", session: "January Session", date: "31 Jan 2025", btn: "Set Reminder" },
