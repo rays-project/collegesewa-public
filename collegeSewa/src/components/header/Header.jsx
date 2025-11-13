@@ -280,24 +280,24 @@ const Header = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td><a className="dropdown-link" href="#">Contact Us</a></td>
-                        <td><a className="dropdown-link" href="#">10,000+ Colleges</a></td>
+                        <td><Link  className="dropdown-link" href="#">Contact Us</Link></td>
+                        <td><p >10,000+ Colleges</p></td>
                       </tr>
                       <tr>
-                        <td><a className="dropdown-link" href="#">Blogs</a></td>
-                        <td><a className="dropdown-link" href="#">Expert Support</a></td>
+                        <td><Link className="dropdown-link" href="#">Blogs</Link></td>
+                        <td><p >Expert Support</p></td>
                       </tr>
                       <tr>
-                        <td><a className="dropdown-link" href="#">Ask Question</a></td>
-                        <td><a className="dropdown-link" href="#">Real Reviews</a></td>
+                        <td><Link className="dropdown-link" href="#">Ask Question</Link></td>
+                        <td><p >Real Reviews</p></td>
                       </tr>
                       <tr>
-                        <td><a className="dropdown-link" href="#">Video Call</a></td>
-                        <td><a className="dropdown-link" href="#">Free Guidance</a></td>
+                        <td><Link className="dropdown-link" href="#">Video Call</Link></td>
+                        <td><p>Free Guidance</p></td>
                       </tr>
                       <tr>
-                        <td><a className="dropdown-link" href="#">Chat</a></td>
-                        <td><a className="dropdown-link" href="#">5L+ Students</a></td>
+                        <td><Link className="dropdown-link" href="#">Chat</Link></td>
+                        <td><p>5L+ Students</p></td>
                       </tr>
                     </tbody>
                   </table>
