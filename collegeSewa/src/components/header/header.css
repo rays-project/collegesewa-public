@@ -61,15 +61,32 @@
 
 .dropdown-link {
   color: #333;
-  font-weight: 500;
-  transition: all 0.3s ease;
   text-decoration: none;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: none;
+}
+.active-stream {
+  background-color: #007bff !important;
+  color: #fff !important;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
+
+
 .dropdown-link:hover {
-  color: #00ff88;
-  transform: translateX(3px);
+  background-color: #f1f1f1;
+  color: #007bff;
 }
+
+.active-stream {
+  background-color: #007bff !important;
+  color: #fff !important;
+}
+
 
 /* Login Button */
 .btn-login {
@@ -85,6 +102,7 @@
 .btn-login:hover {
   background-color: #fb8500;
 }
+
 
 /* Navbar Toggler */
 .navbar-toggler {

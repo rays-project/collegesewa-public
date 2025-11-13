@@ -14,7 +14,6 @@ const QuickResultSection = () => {
         </p>
 
         <div className="qr-form">
-          <input type="text" placeholder="Enter Roll Number" className="qr-input" />
           <select className="qr-select">
             <option value="">Select Exam</option>
             <option value="jee">JEE Main 2025</option>

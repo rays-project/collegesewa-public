@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../../components/header/topbar.css";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import logo from '../../assets/image/logo1.jpg'
+import { Link } from "react-router-dom";
 
 const TopbarNavbar = () => {
   return (
@@ -10,14 +12,15 @@ const TopbarNavbar = () => {
       {/* 🔹 Topbar */}
       <div className="topbar py-2 px-4 d-flex justify-content-between align-items-center">
         {/* Logo */}
-        <div className="d-flex align-items-center gap-2">
+       
+          <Link to='/' className="d-flex align-items-center gap-2" style={{textDecoration:'none'}}>
           <img
-            src="https://via.placeholder.com/45"
+            src={logo}
             alt="Logo"
             className="logo-img rounded-circle"
           />
-          <h4 className="m-0 brand-name">College<span className="sewa">Sewa</span></h4>
-        </div>
+          <h3 className="m-0 brand-name">College<span className="sewa">Sewa</span></h3></Link>
+       
 
         {/* Search Bar */}
         <form className="search-bar d-none d-md-flex mx-auto search-form">
