@@ -439,7 +439,7 @@ const Header = () => {
                         <td><p >10,000+ Colleges</p></td>
                       </tr>
                       <tr>
-                        <td><Link className="dropdown-link" href="#">Blogs</Link></td>
+                        <td><Link to="/blog" className="dropdown-link" href="#">Blogs</Link></td>
                         <td><p >Expert Support</p></td>
                       </tr>
                       <tr>
@@ -447,11 +447,11 @@ const Header = () => {
                         <td><p >Real Reviews</p></td>
                       </tr>
                       <tr>
-                        <td><Link className="dropdown-link" href="#">Video Call</Link></td>
+                        <td><Link to="/Counselling" className="dropdown-link" href="#">Video Call</Link></td>
                         <td><p>Free Guidance</p></td>
                       </tr>
                       <tr>
-                        <td><Link className="dropdown-link" href="#">Chat</Link></td>
+                        <td><Link  to="/Counselling" className="dropdown-link" href="#">Chat</Link></td>
                         <td><p>5L+ Students</p></td>
                       </tr>
                     </tbody>

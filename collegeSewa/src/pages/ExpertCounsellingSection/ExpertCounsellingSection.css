@@ -1,0 +1,194 @@
+.counselling-section {
+  background: linear-gradient(180deg, #f4f9ff 0%, #ffffff 100%);
+  padding: 4rem 1rem;
+  color: #1e2a3a;
+  font-family: "Inter", sans-serif;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #0d47a1;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  color: #5c6f91;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==== Buttons ==== */
+.btn-primary {
+  background: linear-gradient(90deg, #007bff, #00b4d8);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #0069d9, #0096c7);
+  box-shadow: 0 8px 18px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.btn-outline-primary:hover {
+  background: #007bff;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.25);
+}
+
+/* ==== Counselling Modes ==== */
+.mode-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid transparent;
+  transition: all 0.35s ease;
+}
+.mode-card:hover {
+  transform: translateY(-6px);
+  border-top: 4px solid #007bff;
+  box-shadow: 0 10px 28px rgba(0, 123, 255, 0.15);
+}
+
+.mode-card .mode-icon {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+.mode-card .phone { color: #007bff; }
+.mode-card .video { color: #00b4d8; }
+.mode-card .chat { color: #28a745; }
+
+.mode-card h5 {
+  font-weight: 700;
+  color: #0d47a1;
+}
+.mode-card p {
+  color: #5c6f91;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.mode-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.2rem;
+}
+.mode-card ul li {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ==== Why Choose Us ==== */
+.why-choose {
+  background: #f9fbff;
+  border-radius: 16px;
+  padding: 2.5rem 1rem;
+}
+.why-box {
+  background: #ffffff;
+  border-radius: 14px;
+  text-align: center;
+  padding: 1.8rem 1rem;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.08);
+  transition: all 0.3s ease;
+}
+.why-box:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, #e3f2fd 0%, #fff 100%);
+}
+.why-box svg {
+  color: #0d47a1;
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+.why-box h6 {
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 0.3rem;
+}
+.why-box p {
+  color: #5c6f91;
+  font-size: 0.9rem;
+}
+
+/* ==== Form ==== */
+.counselling-form {
+  max-width: 850px;
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 91, 187, 0.08);
+}
+.counselling-form input,
+.counselling-form select,
+.counselling-form textarea {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #ccd6eb;
+  background: #f8faff;
+  color: #1e2a3a;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+}
+.counselling-form input:focus,
+.counselling-form textarea:focus,
+.counselling-form select:focus {
+  border-color: #007bff;
+  background: #fff;
+}
+.counselling-form button {
+  border-radius: 10px;
+}
+
+/* ==== FAQ ==== */
+.faq-section {
+  margin-top: 4rem;
+}
+.faq details {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e4ecf8;
+  box-shadow: 0 4px 10px rgba(13, 71, 161, 0.05);
+  transition: all 0.3s ease;
+}
+.faq details[open] {
+  border-color: #007bff;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+}
+.faq summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: #0d47a1;
+  font-size: 1.05rem;
+}
+.faq p {
+  margin-top: 0.6rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .counselling-form {
+    padding: 1.5rem;
+  }
+  .mode-card {
+    padding: 1.5rem 1rem;
+  }
+}

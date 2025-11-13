@@ -24,6 +24,8 @@ import FreeCounsellingSection from './pages/FreeCounsellingSection/FreeCounselli
 import UniversitiesSection from './pages/UniversitiesSection/UniversitiesSection';
 import AuthPage from './pages/Login/Login';
 import ContactUsSection from './pages/ContactUsSection/ContactUsSection';
+import BlogPage from './pages/BlogPage/BlogPage';
+import ExpertCounsellingSection from './pages/ExpertCounsellingSection/ExpertCounsellingSection';
 
 // 👇 Layout component to handle what to show/hide
 function Layout() {
@@ -42,6 +44,8 @@ function Layout() {
       <Routes>
         <Route path="/login" element={<AuthPage />} />
         <Route path="/contact" element={<ContactUsSection/>} />
+        <Route path="/blog" element={<BlogPage/>} />
+        <Route path="/Counselling" element={<ExpertCounsellingSection/>} />
         <Route
           path="/"
           element={
