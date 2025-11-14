@@ -23,7 +23,7 @@ const FreeCounsellingSection = () => {
           <h2 className="title">
             Get <span>FREE Expert Counselling</span>
           </h2>
-          <p className="description">
+          <p className="description desk">
             Talk to our experienced counselors and find your perfect college match.  
             We’ve helped over <strong>1 Lakh+</strong> students achieve their dreams!
           </p>
