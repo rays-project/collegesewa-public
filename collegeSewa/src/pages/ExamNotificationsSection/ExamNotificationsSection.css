@@ -1,8 +1,10 @@
-/* === Section & Container === */
+/* ==========================================
+   EXAM SECTION — CLEAN & FULLY RESPONSIVE
+========================================== */
 .exam-section {
   background: #f9f9f9;
   color: #333;
-  padding: 100px 20px;
+  padding: 80px 20px;
   font-family: "Inter", sans-serif;
 }
 
@@ -13,7 +15,7 @@
 }
 
 .exam-heading {
-  font-size: 2.8rem;
+  font-size: 2.7rem;
   font-weight: 700;
   margin-bottom: 10px;
   background: linear-gradient(90deg, #6a11cb, #2575fc);
@@ -27,30 +29,36 @@
   margin-bottom: 60px;
 }
 
-/* === Grid Cards === */
+/* ==========================================
+   GRID LAYOUT
+========================================== */
 .exam-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
+/* ==========================================
+   CARD STYLES
+========================================== */
 .exam-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 30px 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   cursor: pointer;
   overflow: hidden;
 }
 
 .exam-card:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(38,88,255,0.15);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 45px rgba(38, 88, 255, 0.18);
 }
 
+/* Tag Ribbon */
 .exam-tag {
   position: absolute;
   top: 15px;
@@ -71,12 +79,35 @@
 .exam-tag.purple { background: #8e24aa; }
 .exam-tag.teal { background: #0097a7; }
 
-.exam-name { font-size: 1.5rem; font-weight: 700; color: #1e3a8a; margin-bottom: 5px; }
-.exam-title { font-size: 1rem; color: #555; margin-bottom: 8px; }
-.exam-status { color: #0284c7; font-weight: 600; margin-bottom: 12px; }
-.exam-info { font-size: 0.95rem; color: #444; margin-bottom: 20px; }
+/* Text Content */
+.exam-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 5px;
+}
 
-/* === Buttons === */
+.exam-title {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.exam-status {
+  color: #0284c7;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.exam-info {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   MODERN BUTTONS
+========================================== */
 .modern-btn {
   padding: 12px 28px;
   border-radius: 50px;
@@ -84,25 +115,24 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
-  position: relative;
   overflow: hidden;
   margin-right: 10px;
   transition: all 0.4s ease;
 }
 
-/* Glow Gradient Button */
+/* Filled Glow Button */
 .modern-btn.glow {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(38,88,255,0.3);
+  box-shadow: 0 6px 20px rgba(38, 88, 255, 0.3);
 }
 
 .modern-btn.glow:hover {
-  box-shadow: 0 8px 35px rgba(38,88,255,0.6), 0 0 15px rgba(38,88,255,0.4) inset;
+  box-shadow: 0 10px 32px rgba(38, 88, 255, 0.55);
   transform: scale(1.08) translateY(-3px);
 }
 
-/* Glow Outline Button */
+/* Outline Glow */
 .modern-btn.glow-outline {
   background: transparent;
   border: 2px solid #2575fc;
@@ -112,7 +142,7 @@
 .modern-btn.glow-outline:hover {
   background: linear-gradient(135deg, #2575fc, #6a11cb);
   color: #fff;
-  box-shadow: 0 6px 25px rgba(38,88,255,0.4);
+  box-shadow: 0 6px 25px rgba(38, 88, 255, 0.4);
   transform: scale(1.08) translateY(-3px);
 }
 
@@ -121,4 +151,49 @@
   margin-top: 50px;
   font-size: 1rem;
   padding: 12px 45px;
+}
+
+/* ==========================================
+   RESPONSIVE BREAKPOINTS
+========================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .exam-heading {
+    font-size: 2.3rem;
+  }
+  .exam-card {
+    padding: 25px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .exam-heading {
+    font-size: 2rem;
+  }
+  .exam-sub {
+    font-size: 1rem;
+  }
+  .modern-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .exam-heading {
+    font-size: 1.7rem;
+  }
+  .exam-card {
+    padding: 22px 18px;
+  }
+  .exam-grid {
+    gap: 20px;
+  }
+  .modern-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

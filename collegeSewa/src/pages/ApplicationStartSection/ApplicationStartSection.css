@@ -7,67 +7,75 @@
   overflow: hidden;
 }
 
+/* Smooth Frost GLASS Overlay */
 .bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(6px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(235, 240, 255, 0.96)
+  );
+  backdrop-filter: blur(10px);
   z-index: 1;
 }
 
+/* Bring container on top */
 .application-section .container {
   position: relative;
   z-index: 2;
 }
 
+/* Title */
 .application-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #002b5b;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #002a55;
+  letter-spacing: 0.5px;
 }
 
 .application-title span {
-  background: linear-gradient(90deg, #0055ff, #7c3aed);
+  background: linear-gradient(90deg, #0055ff, #8a3efc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .application-subtitle {
   color: #475569;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   max-width: 680px;
   margin: 0 auto 50px;
 }
 
-/* ✨ CARD DESIGN */
+/* CARD - More Premium */
 .app-card {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  padding: 45px 25px;
-  box-shadow: 0 10px 30px rgba(0, 60, 180, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 22px;
+  padding: 45px 28px;
+  box-shadow: 0 10px 35px rgba(0, 70, 160, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(8px);
+  transition: 0.45s ease;
 }
 
+/* CONIC Glow */
 .app-card::before {
   content: "";
   position: absolute;
   top: -50%;
   left: -50%;
-  width: 200%;
-  height: 200%;
+  width: 220%;
+  height: 220%;
   background: conic-gradient(
-    from 90deg,
-    rgba(0, 85, 255, 0.25),
+    from 0deg,
+    rgba(0, 85, 255, 0.2),
     rgba(124, 58, 237, 0.25),
-    rgba(0, 85, 255, 0.25)
+    rgba(0, 85, 255, 0.2)
   );
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: 0.4s ease;
   z-index: 0;
 }
 
@@ -82,82 +90,83 @@
 }
 
 .app-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 86, 210, 0.3);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 45px rgba(0, 86, 210, 0.35);
 }
 
-/* ✨ Icon */
+/* Icon Floating */
 .app-icon {
-  font-size: 3.2rem;
-  margin-bottom: 15px;
-  background: linear-gradient(90deg, #0055ff, #7c3aed);
+  font-size: 3.4rem;
+  background: linear-gradient(90deg, #0055ff, #8a3efc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
   animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
 
-/* ✨ Text */
+/* Text */
 .app-card h4 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #002b5b;
+  color: #003366;
   margin-bottom: 10px;
   position: relative;
   z-index: 2;
 }
 
 .app-card p {
-  color: #475569;
+  color: #4a5568;
   font-size: 1rem;
+  line-height: 1.55;
   position: relative;
   z-index: 2;
 }
 
-/* ✨ Buttons */
+/* Buttons */
 .btn-gradient {
   background: linear-gradient(90deg, #0055ff, #7c3aed);
-  color: #fff;
-  border: none;
+  color: white;
   border-radius: 30px;
-  padding: 10px 25px;
+  padding: 10px 28px;
   font-weight: 600;
-  transition: 0.3s;
+  border: none;
+  transition: 0.3s ease;
 }
 
 .btn-gradient:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
   background: linear-gradient(90deg, #7c3aed, #0055ff);
-  box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3);
+  box-shadow: 0 5px 18px rgba(0, 85, 255, 0.35);
 }
 
 .btn-outline-gradient {
   border: 2px solid #0055ff;
   color: #0055ff;
-  border-radius: 30px;
-  padding: 10px 25px;
   font-weight: 600;
-  transition: 0.3s;
+  border-radius: 30px;
+  padding: 10px 28px;
+  transition: 0.3s ease;
 }
 
 .btn-outline-gradient:hover {
   background: linear-gradient(90deg, #0055ff, #7c3aed);
-  color: #fff;
+  color: white;
   border-color: transparent;
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3);
+  transform: scale(1.07);
+  box-shadow: 0 5px 18px rgba(0, 85, 255, 0.35);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .application-title {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
   .app-card {
-    padding: 30px 20px;
+    padding: 32px 22px;
   }
 }

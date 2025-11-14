@@ -1,0 +1,99 @@
+/* ======================== */
+/* FULL RESPONSIVE SUPPORT  */
+/* ======================== */
+
+/* Tablet + Mobile: stack columns */
+@media (max-width: 991px) {
+  .hover-card, .college-card {
+    padding: 12px !important;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .list-group {
+    max-height: 380px !important;
+  }
+}
+
+/* Mobile Large (max-width 768px) */
+@media (max-width: 768px) {
+  .ratio {
+    border-radius: 15px !important;
+    overflow: hidden;
+  }
+
+  h3 {
+    font-size: 20px !important;
+  }
+
+  .filter-btn {
+    padding: 8px 18px !important;
+    font-size: 12px;
+  }
+
+  .list-group-item {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 10px;
+  }
+
+  .list-group {
+    max-height: 350px !important;
+  }
+}
+
+/* Mobile Small (max-width: 576px) */
+@media (max-width: 576px) {
+  .hover-card .fs-3 {
+    font-size: 26px !important;
+  }
+
+  .hover-card h4 {
+    font-size: 16px !important;
+  }
+
+  .hover-card p {
+    font-size: 12px !important;
+  }
+
+  .filter-btn {
+    padding: 6px 15px !important;
+    font-size: 11px;
+  }
+
+  .college-card {
+    padding: 12px !important;
+  }
+  
+  .college-card h6 {
+    font-size: 15px !important;
+  }
+
+  .list-group {
+    max-height: 320px !important;
+  }
+
+  .view-more-btn {
+    font-size: 13px !important;
+    padding: 6px 14px !important;
+  }
+}
+
+/* Mobile Ultra-small */
+@media (max-width: 400px) {
+  .filter-btn {
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .list-group-item span {
+    font-size: 12px !important;
+  }
+
+  .list-group {
+    max-height: 300px !important;
+  }
+}

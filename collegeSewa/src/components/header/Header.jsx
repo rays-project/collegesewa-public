@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./header.css";
 import { Link } from "react-router-dom";
-// import logo from '../../assets/image/logo1.jpg'
+import logo from '../../assets/image/logo1.jpg'
 
 const Header = () => {
   const universityData = {
@@ -123,15 +123,23 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg custom-navbar px-3 py-2 shadow-sm">
       <div className="container-fluid">
         {/* Logo */}
-        <Link className="navbar-brand text-white fw-bold fs-4" to="/">
-          {/* <img
-              src={logo}
-              alt="Logo"
-              className="logo-img rounded-circle"
-              /> */}
+        <Link
+  to="/"
+  className="search-bar d-flex align-items-center gap-2 d-lg-none"
+  style={{ textDecoration: "none" }}
+>
+  <img
+    src={logo}
+    alt="Logo"
+    className="logo-img rounded-circle"
+    style={{ width: "40px", height: "40px", objectFit: "cover" }}
+  />
 
-              CollegeSewa
-        </Link>
+  <h3 className="m-0 brand-name">
+    College<span className="sewa">Sewa</span>
+  </h3>
+</Link>
+
 
         {/* Mobile Toggle */}
         <button
@@ -468,6 +476,8 @@ const Header = () => {
               <a className="nav-link text-white" href="#">Counselling</a>
             </li>
           </ul>
+         
+
 
           {/* Login Button */}
           <div className="d-flex justify-content-center">
@@ -475,6 +485,17 @@ const Header = () => {
               Login
             </Link>
           </div>
+           <form className="search-bar d-flex d-lg-none w-100 px-2 my-2">
+  <input
+    className="form-control search-input"
+    type="search"
+    placeholder="Search colleges, courses..."
+    aria-label="Search"
+  />
+  <button className="btn1 btn-search ms-2" type="submit">
+    Search
+  </button>
+</form>
         </div>
       </div>
     </nav>

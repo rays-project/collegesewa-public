@@ -1,8 +1,13 @@
+/* ============================= */
+/* MAIN SECTION + BACKGROUND     */
+/* ============================= */
+
 .university-section {
   position: relative;
   color: #0d1b2a;
   background: linear-gradient(135deg, #f9fbff 0%, #e8f0ff 100%);
   overflow: hidden;
+  padding: 60px 0;
 }
 
 .university-section::before {
@@ -18,47 +23,59 @@
 }
 
 .overlay {
-  background: radial-gradient(circle at top left, rgba(0, 60, 255, 0.15), rgba(255, 255, 255, 0.8));
+  background: radial-gradient(circle at top left, rgba(0, 60, 255, 0.15), rgba(255, 255, 255, 0.85));
   position: absolute;
   inset: 0;
   z-index: 1;
   backdrop-filter: blur(3px);
 }
 
+/* ============================= */
+/* TITLES                        */
+/* ============================= */
+
 .section-title {
   font-size: 2.4rem;
   font-weight: 700;
   color: #012970 !important;
-  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-bottom: 10px;
   position: relative;
   z-index: 2;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
 }
 
 .section-subtitle {
   color: #334155;
-  font-size: 1.1rem;
+  text-align: center;
+  font-size: 1.2rem;
   position: relative;
   z-index: 2;
+  margin-bottom: 40px;
 }
+
+/* ============================= */
+/* CARDS                         */
+/* ============================= */
 
 .university-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.78);
   border-radius: 18px;
   padding: 25px 20px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 40, 120, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.4);
   transition: all 0.4s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   cursor: pointer;
   z-index: 2;
 }
 
 .university-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 40px rgba(0, 60, 180, 0.3);
-  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 60, 180, 0.28);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .glow-border {
@@ -74,14 +91,16 @@
 
 .university-card:hover .glow-border {
   opacity: 1;
-  filter: blur(10px);
+  filter: blur(12px);
 }
 
-
+/* ============================= */
+/* TEXT INSIDE CARD              */
+/* ============================= */
 
 .uni-name {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: #002b5b;
   margin-top: 10px;
 }
@@ -110,7 +129,10 @@
   color: #007bff;
 }
 
-/* View more button */
+/* ============================= */
+/* VIEW MORE BUTTON              */
+/* ============================= */
+
 .view-more-btn {
   background: linear-gradient(90deg, #0055ff, #7c3aed);
   color: #fff;
@@ -131,35 +153,74 @@
   box-shadow: 0 8px 25px rgba(0, 74, 173, 0.35);
 }
 
-/* Animation */
+/* ============================= */
+/* ANIMATIONS                    */
+/* ============================= */
+
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade { animation: fadeInUp 1s ease forwards; }
+.animate-up { animation: fadeInUp 0.8s ease forwards; }
+
+/* ============================= */
+/* RESPONSIVE RULES              */
+/* ============================= */
+
+/* Tablet & below */
+@media (max-width: 991px) {
+  .section-title { font-size: 2rem; }
+  .section-subtitle { font-size: 1.05rem; }
+
+  .university-card {
+    padding: 20px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+  .uni-name { font-size: 1.05rem; }
 }
 
-.animate-fade {
-  animation: fadeInUp 1s ease forwards;
-}
-
-.animate-up {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Responsive */
+/* Mobile Large */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 1.6rem;
-  }
-  .section-subtitle {
-    font-size: 1rem;
-  }
+  .section-title { font-size: 1.6rem; }
+  .section-subtitle { font-size: 1rem; }
+
   .university-card {
     padding: 18px;
+  }
+
+  .uni-name { font-size: 1rem; }
+}
+
+/* Mobile Small */
+@media (max-width: 576px) {
+  .section-title { font-size: 1.4rem; }
+  .section-subtitle { font-size: 0.95rem; }
+
+  .university-card {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .divider { width: 50%; }
+
+  .view-more-btn {
+    padding: 10px 26px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra-small devices */
+@media (max-width: 400px) {
+  .section-title { font-size: 1.25rem; }
+  .section-subtitle { font-size: 0.9rem; }
+
+  .uni-name { font-size: 0.95rem; }
+  .course-count { font-size: 0.85rem; }
+
+  .view-more-btn {
+    padding: 8px 22px;
+    font-size: 0.85rem;
   }
 }

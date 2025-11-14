@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaStar, FaUsers, FaRupeeSign, FaUniversity, FaUserGraduate } from "react-icons/fa";
+import './mode.css'
 
 const VideoAndCollegesPage = () => {
   const [currentVideo] = useState("https://www.youtube.com/embed/DWRcNpR6Kdc");

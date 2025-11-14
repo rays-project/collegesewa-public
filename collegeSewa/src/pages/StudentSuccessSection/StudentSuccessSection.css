@@ -1,17 +1,20 @@
+/* ================================
+   STUDENT SUCCESS SECTION
+================================= */
 .student-success-section {
   position: relative;
   color: white;
-  padding: 100px 0;
+  padding: 80px 0;
   overflow: hidden;
 }
 
-/* Animated Gradient Background */
+/* Animated Background */
 .animated-bg {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, #003973, #e5e5be, #1a2980, #26d0ce);
   background-size: 300% 300%;
-  animation: gradientShift 10s ease infinite;
+  animation: gradientShift 12s ease infinite;
   z-index: 0;
   filter: brightness(0.7);
 }
@@ -22,12 +25,12 @@
   100% { background-position: 0% 50%; }
 }
 
+/* Titles */
 .success-title {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  color: #fff;
-  position: relative;
   z-index: 2;
+  position: relative;
 }
 
 .success-title span {
@@ -35,23 +38,24 @@
 }
 
 .success-subtitle {
-  color: #e0f2fe;
+  color: #dff9ff;
   font-size: 1.1rem;
   margin-bottom: 50px;
   z-index: 2;
   position: relative;
 }
 
-/* Scrolling Animation */
+/* Scroll Animation Wrapper */
 .scroll-row {
   overflow: hidden;
   white-space: nowrap;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .scroll-track {
   display: inline-flex;
-  animation: scroll 28s linear infinite;
+  gap: 25px;
+  animation: scroll 25s linear infinite;
 }
 
 .scroll-row.right-left .scroll-track {
@@ -59,30 +63,29 @@
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-/* Card Styles */
+/* Cards */
 .student-card {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: 25px 30px;
-  margin: 0 18px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 24px;
   width: 220px;
   text-align: center;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.12);
   transition: all 0.4s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .student-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  background: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+  transform: translateY(-10px) scale(1.04);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
 }
 
-/* Photo */
+/* Student Image */
 .student-photo {
   display: flex;
   justify-content: center;
@@ -94,20 +97,18 @@
   border-radius: 50%;
   border: 3px solid #00e5ff;
   object-fit: cover;
-  margin-bottom: 10px;
 }
 
-/* Text */
 .student-card h5 {
-  font-size: 1rem;
-  font-weight: 600;
   color: #fff;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 4px;
 }
 
 .college-name {
+  color: #b2f7ff;
   font-size: 0.9rem;
-  color: #a5f3fc;
   margin-bottom: 10px;
 }
 
@@ -117,9 +118,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: #00e5ff;
-  font-weight: 600;
   font-size: 0.9rem;
+  font-weight: 600;
+  color: #00e5ff;
 }
 
 .company-logo {
@@ -129,17 +130,69 @@
   filter: brightness(0) invert(1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ================================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablet */
+@media (max-width: 992px) {
   .success-title {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
   }
   .student-card {
-    width: 170px;
+    width: 190px;
     padding: 20px;
   }
   .student-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .success-title {
+    font-size: 1.9rem;
+  }
+
+  .success-subtitle {
+    font-size: 1rem;
+  }
+
+  .student-card {
+    width: 170px;
+    padding: 18px;
+  }
+
+  .scroll-track {
+    gap: 18px;
+  }
+
+  .student-img {
     width: 65px;
     height: 65px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .success-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .success-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .student-card {
+    width: 150px;
+    padding: 16px;
+  }
+
+  .scroll-track {
+    gap: 15px;
+    animation-duration: 18s; /* faster for small mobile */
   }
 }
