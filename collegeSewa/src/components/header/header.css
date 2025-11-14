@@ -5,16 +5,40 @@
   background: linear-gradient(90deg, #1d2671, #c33764);
   color: white;
   padding: 6px 0;
+  transition: all 0.3s ease-in-out;
 }
 
+/* Brand */
 .navbar-brand {
   font-weight: 700;
   font-size: 1.35rem;
   transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .navbar-brand:hover {
   transform: scale(1.05);
+}
+
+/* Logo */
+.logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #00b3ff;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sewa {
+  color: #00e0ff;
 }
 
 /* Navbar Links */
@@ -30,7 +54,9 @@
   transform: translateY(-2px);
 }
 
-/* Dropdown Menu Base */
+/* ===============================
+   Dropdown + Mega Menu
+================================== */
 .dropdown-menu {
   border-radius: 10px;
   border: none;
@@ -38,7 +64,6 @@
   animation: fadeIn 0.2s ease-in-out;
 }
 
-/* Mega Dropdown Styling */
 .mega-dropdown {
   min-width: 750px;
   border-radius: 12px;
@@ -92,24 +117,6 @@
   border: none;
   transition: all 0.3s ease;
 }
-.logo-img {
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #00b3ff;
-}
-
-.brand-name {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #001b3f;
-}
-
-.sewa {
-  color: #00b3ff;
-}
-
 
 .btn-login:hover {
   background-color: #cfa069;
@@ -118,22 +125,17 @@
 /* Toggler */
 .navbar-toggler {
   border: 1px solid #fff;
+  padding: 5px 8px;
 }
 
 .navbar-toggler-icon {
   filter: invert(1);
 }
 
-/* Animation */
+/* Fade animation */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===============================
@@ -149,43 +151,58 @@
 
 /* Tablet (≤992px) */
 @media (max-width: 992px) {
+
+  /* Sticky fix for mobile */
   .custom-navbar {
+    background: #1E40AF !important;
+    padding: 8px 0;
     position: sticky !important;
     top: 0 !important;
-    z-index: 1100 !important;
-    background: #1E40AF !important;
+    z-index: 1500 !important;
     box-shadow: 0 3px 6px rgba(0,0,0,0.15);
   }
+
   .mega-dropdown {
     min-width: 100%;
-    max-height: 400px;
+    max-height: 430px;
     overflow-y: auto;
   }
 
   .navbar-nav .nav-link {
     text-align: left;
-    padding: 12px 15px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
   .btn-login {
-    margin: 12px 0;
-    width: 60%;
+    margin: 12px 10px;
+    width: 65%;
     text-align: center;
+  }
+
+  /* Prevent dropdown from going outside */
+  .dropdown-menu {
+    width: 100% !important;
+    position: static !important;
+    transform: none !important;
   }
 }
 
 /* Mobile (≤576px) */
 @media (max-width: 576px) {
+
   .navbar-brand {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+  }
+
+  .logo-img {
+    width: 36px;
+    height: 36px;
   }
 
   .nav-link {
     font-size: 0.95rem;
-  }
-
-  .dropdown-menu {
-    width: 100%;
   }
 
   .mega-dropdown {
@@ -200,12 +217,12 @@
   }
 
   .navbar-nav .nav-link {
-    padding: 10px;
+    padding: 12px;
   }
+
   .btn-login {
-    margin: 12px 0;
     width: 100%;
-    text-align: center;
+    padding: 10px;
   }
 }
 
@@ -215,5 +232,8 @@
     font-size: 1rem;
   }
 
-  
+  .logo-img {
+    width: 32px;
+    height: 32px;
+  }
 }
