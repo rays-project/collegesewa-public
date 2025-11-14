@@ -1,3 +1,6 @@
+/* ===========================
+        UNI PRO SECTION
+=========================== */
 .uni-pro-wrapper {
   position: relative;
   background: #ffffff;
@@ -56,6 +59,7 @@
   font-size: 2.9rem;
   font-weight: 800;
   color: #002447;
+  line-height: 1.2;
 }
 
 .uni-title span {
@@ -69,6 +73,7 @@
   color: #555;
   margin: 1rem 0 2rem;
   max-width: 550px;
+  line-height: 1.7;
 }
 
 /* Features List */
@@ -202,4 +207,99 @@
   font-size: 1rem;
   font-weight: 600;
   color: #0078ff;
+}
+
+/* ===========================
+      RESPONSIVE SECTION
+=========================== */
+
+/* Tablets – 992px */
+@media (max-width: 992px) {
+  .uni-pro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .uni-left {
+    order: 2;
+  }
+
+  .uni-right {
+    order: 1;
+    width: 100%;
+  }
+
+  .uni-title {
+    font-size: 2.4rem;
+  }
+
+  .uni-glass-card img {
+    height: 360px;
+  }
+}
+
+/* Mobiles – 768px */
+@media (max-width: 768px) {
+  .uni-title {
+    font-size: 2.1rem;
+  }
+
+  .uni-desc {
+    font-size: 1rem;
+  }
+
+  .uni-features-list {
+    gap: 1rem;
+  }
+
+  .uni-stat h2 {
+    font-size: 1.7rem;
+  }
+
+  .uni-stat {
+    padding: 1.1rem 1.5rem;
+  }
+
+  .uni-glass-card img {
+    height: 330px;
+  }
+}
+
+/* Small Mobiles – 576px */
+@media (max-width: 576px) {
+  .uni-pro-wrapper {
+    padding: 4rem 1.5rem;
+  }
+
+  .uni-title {
+    font-size: 1.8rem;
+  }
+
+  .uni-feature {
+    padding: 0.9rem 1rem;
+  }
+
+  .uni-glass-card img {
+    height: 280px;
+  }
+
+  .uni-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Phones – 400px */
+@media (max-width: 400px) {
+  .uni-title {
+    font-size: 1.6rem;
+  }
+
+  .uni-glass-card img {
+    height: 240px;
+  }
+
+  .uni-feature h3 {
+    font-size: 1.05rem;
+  }
 }

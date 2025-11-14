@@ -163,13 +163,13 @@
   }
 
   .navbar-nav .nav-link {
-    text-align: center;
+    text-align: left;
     padding: 12px 15px;
   }
 
   .btn-login {
     margin: 12px 0;
-    width: 50%;
+    width: 60%;
     text-align: center;
   }
 }
@@ -201,6 +201,11 @@
 
   .navbar-nav .nav-link {
     padding: 10px;
+  }
+  .btn-login {
+    margin: 12px 0;
+    width: 100%;
+    text-align: center;
   }
 }
 

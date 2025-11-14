@@ -1,35 +1,75 @@
+/* =======================================
+          FREE COUNSELLING PRO
+======================================= */
 .free-counselling-pro {
-  background: linear-gradient(135deg, #001f3f, #002b55, #003a73);
+  background: linear-gradient(135deg, #001a35, #00254d, #00386b);
   color: #fff;
   font-family: "Poppins", sans-serif;
   padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Decorative glowing overlay */
+.free-counselling-pro::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.25), transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.free-counselling-pro::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 255, 180, 0.20), transparent 70%);
+  filter: blur(45px);
+  z-index: 0;
+}
+
+/* =======================================
+            WRAPPER
+======================================= */
 .counselling-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-/* LEFT */
+/* =======================================
+               LEFT
+======================================= */
 .counselling-left {
   flex: 1 1 550px;
+  color: #e5f7ff;
 }
 
 .subtitle {
-  color: #66e0ff;
-  font-size: 1rem;
-  letter-spacing: 1px;
+  color: #62dbff;
+  font-size: 0.95rem;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.4rem;
 }
 
 .title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
-  margin: 1rem 0;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .title span {
@@ -39,131 +79,157 @@
 }
 
 .description {
-  font-size: 1.1rem;
-  color: #716e6e;
+  font-size: 1.15rem;
+  color: #c8d9ff;
   max-width: 600px;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
 }
 
-/* Features */
+/* =======================================
+            FEATURES
+======================================= */
 .features-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 1rem 1.2rem;
-  transition: 0.3s;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 255, 0.1);
 }
 
 .feature-item:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.17);
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 255, 0.3);
 }
 
 .feature-item svg {
+  font-size: 1.8rem;
   color: #00e0ff;
-  font-size: 1.6rem;
 }
 
 .feature-item h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
   margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .feature-item p {
-  color: #b0d0ff;
   font-size: 0.9rem;
+  color: #bfe4ff;
 }
 
-/* RIGHT */
+/* =======================================
+                RIGHT
+======================================= */
 .counselling-right {
-  flex: 1 1 400px;
+  flex: 1 1 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
-/* Card */
+/* =======================================
+                CARD
+======================================= */
 .counselling-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  padding: 2.5rem 2rem;
   text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.15);
-  transition: 0.3s;
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
+  transition: 0.3s ease;
 }
 
 .counselling-card:hover {
+  background: rgba(255, 255, 255, 0.18);
   transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.15);
 }
 
 .counsellor-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
+  object-fit: cover;
   border: 4px solid #00e0ff;
   margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.counsellor-img:hover {
+  transform: scale(1.05);
 }
 
 .counselling-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .counselling-card p {
+  font-size: 1rem;
   color: #b0d0ff;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.7rem;
 }
 
-/* Buttons */
+/* =======================================
+              BUTTONS
+======================================= */
 .btn-group {
   display: flex;
-  justify-content: center;
   gap: 1rem;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn-primary,
 .btn-outline {
-  padding: 0.8rem 1.6rem;
+  padding: 0.85rem 1.8rem;
   border-radius: 30px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .btn-primary {
   background: linear-gradient(90deg, #00e0ff, #00b894);
+  color: white;
   border: none;
-  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: scale(1.07);
 }
 
 .btn-outline {
   border: 2px solid #00e0ff;
-  background: transparent;
   color: #00e0ff;
+  background: transparent;
 }
 
-.btn-primary:hover,
 .btn-outline:hover {
-  transform: scale(1.05);
+  background: rgba(0, 224, 255, 0.1);
+  transform: scale(1.07);
 }
 
-/* Stats */
+/* =======================================
+                STATS
+======================================= */
 .stats-grid {
   display: flex;
   justify-content: center;
@@ -172,29 +238,31 @@
 }
 
 .stat-item {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.10);
   border-radius: 12px;
+  padding: 1.2rem 1.7rem;
   text-align: center;
-  padding: 1rem 1.5rem;
-  flex: 1 1 100px;
-  min-width: 120px;
-  transition: 0.3s;
+  width: 130px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 255, 0.1);
 }
 
 .stat-item:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-5px);
 }
 
 .stat-item svg {
+  font-size: 1.8rem;
   color: #00e0ff;
-  font-size: 1.6rem;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .stat-item h4 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  margin: 0;
+  line-height: 1;
 }
 
 .stat-item p {
@@ -202,23 +270,34 @@
   color: #b0d0ff;
 }
 
-/* Responsive */
+/* =======================================
+            RESPONSIVE
+======================================= */
 @media (max-width: 992px) {
   .counselling-wrapper {
     flex-direction: column;
     text-align: center;
   }
 
+  .counselling-card {
+    margin-top: 2rem;
+  }
+
   .features-list {
     justify-items: center;
   }
+}
 
-  .counselling-right {
-    width: 100%;
+@media (max-width: 576px) {
+  .title {
+    font-size: 2.3rem;
   }
 
   .counselling-card {
-    width: 100%;
-    max-width: 400px;
+    padding: 2rem 1.5rem;
+  }
+
+  .features-list {
+    grid-template-columns: 1fr;
   }
 }

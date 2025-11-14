@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import "./Footer.css";
+import logo from '../../assets/image/logo1.jpg'
  // add your logo here
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
     <footer className="footer-section">
       <div className="d-flex align-items-center gap-2  mb-5">
           <img
-            src="https://via.placeholder.com/45"
+            src={logo}
             alt="Logo"
             className="logo-img rounded-circle"
           />

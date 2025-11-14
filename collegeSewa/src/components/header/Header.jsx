@@ -480,19 +480,19 @@ const Header = () => {
 
 
           {/* Login Button */}
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-left">
             <Link to="/login" style={{textDecoration:'none'}} className="btn1 btn-login">
               Login
             </Link>
           </div>
-           <form className="search-bar d-flex d-lg-none w-100 px-2 my-2">
+           <form className="search-bar d-flex d-lg-none w-100  my-2">
   <input
     className="form-control search-input"
     type="search"
     placeholder="Search colleges, courses..."
     aria-label="Search"
   />
-  <button className="btn1 btn-search ms-2" type="submit">
+  <button className="btn1 btn-search " type="submit">
     Search
   </button>
 </form>
