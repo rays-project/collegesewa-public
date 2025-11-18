@@ -6,82 +6,93 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./TestimonialsSection.css";
 
-const testimonials = [
+const data = [
   {
     name: "Rahul Sharma",
-    course: "IIT Delhi - B.Tech Computer Science",
+    course: "IIT Delhi - B.Tech CSE",
     video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    thumbnail: "https://img.freepik.com/free-photo/handsome-young-indian-student-man-holding-notebooks-while-standing-street_231208-2773.jpg?semt=ais_hybrid&w=740&q=80",
+    img: "https://img.freepik.com/free-photo/handsome-young-indian-student-man-holding-notebooks-while-standing-street_231208-2773.jpg",
   },
   {
     name: "Priya Patel",
     course: "IIM Ahmedabad - MBA",
     video: "https://www.w3schools.com/html/movie.mp4",
-    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTslgCuD5qWrnfLWGVjh0yuPIQxU6G3g8HV8Q&s",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTslgCuD5qWrnfLWGVjh0yuPIQxU6G3g8HV8Q",
   },
   {
     name: "Amit Kumar",
     course: "AIIMS Delhi - MBBS",
     video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    thumbnail: "https://img.freepik.com/free-photo/school-boy-with-book-park_23-2148199240.jpg?semt=ais_hybrid&w=740&q=80",
-  },
-  {
-    name: "Sneha Reddy",
-    course: "BITS Pilani - B.Tech Electronics",
-    video: "https://www.w3schools.com/html/movie.mp4",
-    thumbnail: "https://thumbs.dreamstime.com/b/female-college-student-happy-girl-european-university-scholarship-uni-91749887.jpg",
+    img: "https://img.freepik.com/free-photo/school-boy-with-book-park_23-2148199240.jpg",
   },
 ];
 
-const FullVideoTestimonials = () => {
-  const [playingIndex, setPlayingIndex] = useState(null);
+const VideoTestimonials = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [activeVideo, setActiveVideo] = useState("");
+
+  const openModal = (url) => {
+    setActiveVideo(url);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setActiveVideo("");
+  };
 
   return (
-    <section className="full-video-testimonials">
-      <div className="container">
-        <h2 className="section-titles">Student's Testimonials</h2>
-        <p className="section-subtitle">
-          Hear from our successful students who found their perfect college match
-        </p>
+    <section className="testi-wrapper">
+      <h2 className="testi-title">Student Testimonials</h2>
+      <p className="testi-sub">Real stories from our successful students</p>
 
-        <Swiper
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={true}
-        >
-          {testimonials.map((student, index) => (
-            <SwiperSlide key={index}>
-              <div className="video-card">
-                {playingIndex === index ? (
-                  <video
-                    src={student.video}
-                    controls
-                    autoPlay
-                    className="testimonial-video"
-                  />
-                ) : (
-                  <div
-                    className="video-thumbnail"
-                    style={{ backgroundImage: `url(${student.thumbnail})` }}
-                    onClick={() => setPlayingIndex(index)}
-                  >
-                    <div className="play-overlay">&#9658;</div>
-                  </div>
-                )}
-                <div className="student-info">
-                  <h3>{student.name}</h3>
-                  <p>{student.course}</p>
+      <Swiper
+        modules={[Navigation, Pagination]}
+        navigation
+        pagination={{ clickable: true }}
+        spaceBetween={20}
+        slidesPerView={1}
+        loop
+        className="testi-slider custom-swiper"
+      >
+        {data.map((item, i) => (
+          <SwiperSlide key={i}>
+            <div className="testi-card">
+
+              {/* IMAGE */}
+              <div
+                className="testi-img"
+                style={{ backgroundImage: `url(${item.img})` }}
+                onClick={() => openModal(item.video)}
+              >
+                <div className="testi-overlay"></div>
+
+                <div className="play-btn">▶</div>
+
+                <div className="bottom-info">
+                  <h3>{item.name}</h3>
+                  <p>{item.course}</p>
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* MODAL */}
+      {showModal && (
+        <div className="modal-bg" onClick={closeModal}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal}>
+              ✕
+            </button>
+            <video src={activeVideo} controls autoPlay className="modal-video" />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
-export default FullVideoTestimonials;
+export default VideoTestimonials;

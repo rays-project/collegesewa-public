@@ -59,58 +59,65 @@ const HeroSection = () => {
 
             {/* RIGHT */}
             <div className="col-md-6 text-center hero-img-col position-relative">
-              <div
-                id="heroImageCarousel"
-                className="carousel slide"
-                data-bs-ride="carousel"
-                data-bs-interval="4000"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="https://www.insidehighered.com/sites/default/files/2024-02/GettyImages-1072191138.jpg"
-                      alt="Students learning 1"
-                      className="hero-img img-fluid rounded"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80"
-                      alt="Students learning 2"
-                      className="hero-img img-fluid rounded"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
-                      alt="Students learning 3"
-                      className="hero-img img-fluid rounded"
-                    />
-                  </div>
-                </div>
+  <div
+    id="heroImageCarousel"
+    className="carousel slide shadow-lg rounded-4 overflow-hidden"
+    data-bs-ride="carousel"
+    data-bs-interval="3500"
+    data-bs-pause="hover"
+  >
+    <div className="carousel-inner">
 
-                {/* Controls */}
-                <button
-                  className="carousel-control-prev custom-carousel-btn"
-                  type="button"
-                  data-bs-target="#heroImageCarousel"
-                  data-bs-slide="prev"
-                >
-                  <span className="custom-prev-icon">&#10094;</span>
-                </button>
-                <button
-                  className="carousel-control-next custom-carousel-btn"
-                  type="button"
-                  data-bs-target="#heroImageCarousel"
-                  data-bs-slide="next"
-                >
-                  <span className="custom-next-icon">&#10095;</span>
-                </button>
-              </div>
+      <div className="carousel-item active">
+        <img
+          src="https://www.insidehighered.com/sites/default/files/2024-02/GettyImages-1072191138.jpg"
+          alt="Students learning"
+          className="hero-wall-img"
+        />
+      </div>
 
-              {/* Floating badge */}
-              <div className="img-tag">🎓 CollegeSewa</div>
-            </div>
+      <div className="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80"
+          alt="Students learning"
+          className="hero-wall-img"
+        />
+      </div>
+
+      <div className="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+          alt="Students learning"
+          className="hero-wall-img"
+        />
+      </div>
+
+    </div>
+
+    {/* Controls */}
+    <button
+      className="carousel-control-prev hero-wall-btn"
+      type="button"
+      data-bs-target="#heroImageCarousel"
+      data-bs-slide="prev"
+    >
+      <span className="hero-wall-icon">‹</span>
+    </button>
+
+    <button
+      className="carousel-control-next hero-wall-btn"
+      type="button"
+      data-bs-target="#heroImageCarousel"
+      data-bs-slide="next"
+    >
+      <span className="hero-wall-icon">›</span>
+    </button>
+  </div>
+
+  {/* Small Floating Tag */}
+  <div className="hero-wall-badge">🎓 CollegeSewa</div>
+</div>
+
           </div>
         </div>
       </div>

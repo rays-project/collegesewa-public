@@ -196,3 +196,8 @@
     animation-duration: 18s; /* faster for small mobile */
   }
 }
+
+/* Pause on Hover */
+.scroll-row:hover .scroll-track {
+  animation-play-state: paused !important;
+}
