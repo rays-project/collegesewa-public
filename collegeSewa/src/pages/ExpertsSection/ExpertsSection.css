@@ -153,3 +153,50 @@
     padding: 20px 15px;
   }
 }
+
+/* ===========================
+   FIX SWIPER NEXT/PREV BUTTON POSITION
+=========================== */
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 99 !important;
+  color: #00fff0 !important;
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 255, 200, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.swiper-button-prev {
+  left: -10px !important;
+}
+
+.swiper-button-next {
+  right: -10px !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 255, 200, 0.35);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Mobile Fix */
+@media (max-width: 480px) {
+  .swiper-button-prev {
+    left: 0px !important;
+  }
+  .swiper-button-next {
+    right: 0px !important;
+  }
+}
+
