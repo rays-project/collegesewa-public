@@ -213,6 +213,11 @@ const Header = () => {
             </li>
 
             {/* LINKS */}
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/blog">Compare</Link>
+            </li>
+
             <li className="nav-item">
               <Link className="nav-link" to="/blog">Blogs</Link>
             </li>
