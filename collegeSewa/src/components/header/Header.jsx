@@ -1,501 +1,260 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import logo from "../../assets/image/logo1.jpg";
 import "./header.css";
-import { Link } from "react-router-dom";
-import logo from '../../assets/image/logo1.jpg'
 
 const Header = () => {
-  const universityData = {
-    Engineering: {
-      programs: ["B.Tech", "M.Tech", "B.E.", "Diploma"],
-      specializations: [
-        "Computer Science",
-        "Mechanical",
-        "Electrical",
-        "Civil",
-        "Electronics",
-        "IT",
-      ],
-    },
-    Medical: {
-      programs: ["MBBS", "BDS", "Nursing", "Pharmacy"],
-      specializations: ["Cardiology", "Neurology", "Surgery", "Pediatrics"],
-    },
-    Management: {
-      programs: ["BBA", "MBA", "PGDM"],
-      specializations: ["Finance", "Marketing", "HR", "Operations"],
-    },
-    "Arts & Science": {
-      programs: ["BA", "BSc", "MA", "MSc"],
-      specializations: ["Physics", "Chemistry", "English", "Economics"],
-    },
-    Law: {
-      programs: ["LLB", "LLM"],
-      specializations: ["Criminal Law", "Corporate Law", "Civil Law"],
-    },
-    Architecture: {
-      programs: ["B.Arch", "M.Arch"],
-      specializations: ["Urban Design", "Landscape", "Interior Design"],
-    },
-  };
+  const [activeSection, setActiveSection] = useState("top-colleges");
+  const [programSection, setProgramSection] = useState("top-programs");
+  const [examSection, setExamSection] = useState("top-exams");
 
-  // ======= Data for Exams Dropdown =======
-  const examData = {
-    Engineering: {
-      exams: ["JEE Main", "JEE Advanced", "BITSAT", "VITEEE", "SRMJEEE", "KCET"],
-      features: ["Exam Dates", "Syllabus", "Previous Papers", "Mock Tests", "Cutoffs"],
-    },
-    Medical: {
-      exams: ["NEET UG", "AIIMS", "JIPMER"],
-      features: ["Exam Dates", "Syllabus", "Mock Tests", "Cutoffs"],
-    },
-    Management: {
-      exams: ["CAT", "XAT", "MAT", "SNAP"],
-      features: ["Exam Dates", "Syllabus", "Previous Papers", "Mock Tests"],
-    },
-    Law: {
-      exams: ["CLAT", "AILET", "LSAT"],
-      features: ["Exam Dates", "Syllabus", "Mock Tests"],
-    },
-    Design: {
-      exams: ["NID DAT", "UCEED", "CEED"],
-      features: ["Exam Dates", "Syllabus", "Cutoffs"],
-    },
-  };
-
-  // ======= Data for Programs Dropdown =======
-  const programData = {
-    "UG Courses": {
-      programs: ["B.Tech / B.E.", "BBA", "B.Sc", "BA", "B.Com", "BCA", "LLB"],
-      studyModes: ["Full-time", "Part-time", "Distance Learning", "Online"],
-    },
-    "PG Courses": {
-      programs: ["M.Tech", "MBA", "M.Sc", "MA", "LLM"],
-      studyModes: ["Full-time", "Part-time", "Online"],
-    },
-    Diploma: {
-      programs: ["Diploma in Engineering", "Diploma in Management", "Diploma in Design"],
-      studyModes: ["Full-time", "Distance Learning"],
-    },
-    Doctoral: {
-      programs: ["Ph.D.", "Doctor of Management", "Doctor of Law"],
-      studyModes: ["Full-time", "Part-time"],
-    },
-    Certificate: {
-      programs: ["Certificate in Data Science", "Certificate in Business Analytics"],
-      studyModes: ["Online", "Distance Learning"],
-    },
-  };
-
-  // ======= State Management =======
-  const [activeStream, setActiveStream] = useState("Engineering");
-  const [activeCategory, setActiveCategory] = useState("Engineering");
-  const [activeLevel, setActiveLevel] = useState("UG Courses");
-
-  const [openDropdown, setOpenDropdown] = useState(null); // track which dropdown is open
-
-  const dropdownRefs = {
-    universities: useRef(null),
-    exams: useRef(null),
-    programs: useRef(null),
-  };
-
-  // ======= Handle Outside Click =======
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        dropdownRefs.universities.current &&
-        !dropdownRefs.universities.current.contains(event.target) &&
-        dropdownRefs.exams.current &&
-        !dropdownRefs.exams.current.contains(event.target) &&
-        dropdownRefs.programs.current &&
-        !dropdownRefs.programs.current.contains(event.target)
-      ) {
-        setOpenDropdown(null);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-   
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar px-3 py-2 shadow-sm">
-      <div className="container-fluid">
-        {/* Logo */}
-        <Link
-  to="/"
-  className="search-bar d-flex align-items-center gap-2 d-lg-none"
-  style={{ textDecoration: "none" }}
->
-  <img
-    src={logo}
-    alt="Logo"
-    className="logo-img rounded-circle"
-    style={{ width: "40px", height: "40px", objectFit: "cover" }}
-  />
+    <nav className="navbar navbar-expand-lg  main-navbar shadow-sm ">
+      <div className="container-fluid px-lg-5">
 
-  <h3 className="m-0 brand-name">
-    College<span className="sewa">Sewa</span>
-  </h3>
-</Link>
+        {/* LOGO */}
+        <Link className="navbar-brand fw-bold me-4" to="/">
+          <img src={logo} className="brand-logo" alt="logo" />
+          CollegeSewa
+        </Link>
 
+        {/* MINI SELECTS */}
+        <div className="d-none d-lg-flex">
+          <select className="mini-select me-2">
+            <option>After 10th</option>
+            <option>After 12th</option>
+            <option>Undergraduate</option>
+            <option>Postgraduate</option>
+            <option>MBA</option>
+            <option>Engineering</option>
+            <option>Medical</option>
+          </select>
 
-        {/* Mobile Toggle */}
+          <select className="mini-select me-4">
+            <option>Select City</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Bangalore</option>
+            <option>Pune</option>
+            <option>Hyderabad</option>
+            <option>Chennai</option>
+          </select>
+        </div>
+
+        {/* MOBILE TOGGLER */}
         <button
-          className="navbar-toggler text-white"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-target="#navbar"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Menu Items */}
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        {/* NAV ITEMS */}
+        <div className="collapse navbar-collapse" id="navbar">
+          <ul className="navbar-nav me-auto align-items-lg-center">
 
-            {/* B.Tech Dropdown */}
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle text-white"
-                href="#"
-                id="btechDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                B.Tech
-              </a>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">B.Tech</a></li>
-                <li><a className="dropdown-item" href="#">MBA</a></li>
-                <li><a className="dropdown-item" href="#">MCA</a></li>
-                <li><a className="dropdown-item" href="#">BCA</a></li>
-              </ul>
-            </li>
-
-            {/* City Dropdown */}
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle text-white"
-                href="#"
-                id="cityDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Delhi
-              </a>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Punjab</a></li>
-                <li><a className="dropdown-item" href="#">Uttar Pradesh</a></li>
-                <li><a className="dropdown-item" href="#">Assam</a></li>
-                <li><a className="dropdown-item" href="#">Gujarat</a></li>
-              </ul>
-            </li>
-
-            {/* Universities Mega Dropdown */}
-            <li className="nav-item dropdown mega-parent" ref={dropdownRefs.universities}>
-              <a
-                className="nav-link dropdown-toggle text-white"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenDropdown(openDropdown === "universities" ? null : "universities");
-                }}
-              >
-                Universities
+            {/* ======================= COLLEGES ======================= */}
+            <li className="nav-item dropdown position-static">
+              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                Colleges
               </a>
 
-              {openDropdown === "universities" && (
-                <div className="dropdown-menu show p-3 mega-dropdown">
-                  <div className="table-responsive">
-                    <table className="table table-borderless m-0">
-                      <thead>
-                        <tr>
-                          <th>Streams</th>
-                          <th>Programs</th>
-                          <th>Specializations</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            {Object.keys(universityData).map((stream) => (
-                              <button
-                                key={stream}
-                                className={`dropdown-link btn-sm w-100 text-start mb-1 ${
-                                  activeStream === stream ? "active-stream" : ""
-                                }`}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setActiveStream(stream);
-                                }}
-                              >
-                                {stream}
-                              </button>
-                            ))}
-                          </td>
-                          <td>
-                            {universityData[activeStream].programs.map((program, i) => (
-                              <a
-                                key={i}
-                                href="#"
-                                className="dropdown-link d-block mb-1"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {program}
-                              </a>
-                            ))}
-                          </td>
-                          <td>
-                            {universityData[activeStream].specializations.map((spec, i) => (
-                              <a
-                                key={i}
-                                href="#"
-                                className="dropdown-link d-block mb-1"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {spec}
-                              </a>
-                            ))}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+              <div className="dropdown-menu mega-menu p-4">
+                <div className="row">
+
+                  {/* LEFT MENU */}
+                  <div className="col-4 mega-left">
+                    <a onMouseEnter={() => setActiveSection("top-colleges")}>Top Colleges</a>
+                    <a onMouseEnter={() => setActiveSection("degree-colleges")}>College by Degree</a>
+                    <a onMouseEnter={() => setActiveSection("location-colleges")}>College by City</a>
                   </div>
-                </div>
-              )}
-            </li>
 
-            {/* ========== EXAMS ========== */}
-            <li className="nav-item dropdown mega-parent" ref={dropdownRefs.exams}>
-              <a
-                className="nav-link dropdown-toggle text-white"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenDropdown(openDropdown === "exams" ? null : "exams");
-                }}
-              >
-                Exams
-              </a>
+                  {/* RIGHT CONTENT */}
+                  <div className="col-8 mega-right">
 
-              {openDropdown === "exams" && (
-                <div className="dropdown-menu show p-3 mega-dropdown">
-                  <div className="table-responsive">
-                    <table className="table table-borderless m-0">
-                      <thead>
-                        <tr>
-                          <th>Categories</th>
-                          <th>Exams</th>
-                          <th>Features</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            {Object.keys(examData).map((category) => (
-                              <button
-                                key={category}
-                                className={`dropdown-link btn-sm w-100 text-start mb-1 ${
-                                  activeCategory === category ? "active-stream" : ""
-                                }`}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setActiveCategory(category);
-                                }}
-                              >
-                                {category}
-                              </button>
-                            ))}
-                          </td>
-                          <td>
-                            {examData[activeCategory].exams.map((exam, i) => (
-                              <a
-                                key={i}
-                                href="#"
-                                className="dropdown-link d-block mb-1"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {exam}
-                              </a>
-                            ))}
-                          </td>
-                          <td>
-                            {examData[activeCategory].features.map((feature, i) => (
-                              <a
-                                key={i}
-                                href="#"
-                                className="dropdown-link d-block mb-1"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {feature}
-                              </a>
-                            ))}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    {activeSection === "top-colleges" && (
+                      <div>
+                        <h6 className="mega-heading">Top Colleges</h6>
+                        <a>Top Engineering Colleges</a>
+                        <a>Top MBA Colleges</a>
+                        <a>Top Medical Colleges</a>
+                        <a>Top Government Colleges</a>
+                      </div>
+                    )}
+
+                    {activeSection === "degree-colleges" && (
+                      <div>
+                        <h6 className="mega-heading">Degrees</h6>
+                        <a>B.Tech → CSE</a>
+                        <a>B.Tech → Mechanical</a>
+                        <a>MBA → Finance</a>
+                        <a>MBBS → General Medicine</a>
+                      </div>
+                    )}
+
+                    {activeSection === "location-colleges" && (
+                      <div>
+                        <h6 className="mega-heading">Cities</h6>
+                        <a>Delhi Colleges</a>
+                        <a>Mumbai Colleges</a>
+                        <a>Pune Colleges</a>
+                        <a>Bangalore Colleges</a>
+                      </div>
+                    )}
+
                   </div>
-                </div>
-              )}
-            </li>
-
-            {/* ========== PROGRAMS ========== */}
-            <li className="nav-item dropdown mega-parent" ref={dropdownRefs.programs}>
-              <a
-                className="nav-link dropdown-toggle text-white"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenDropdown(openDropdown === "programs" ? null : "programs");
-                }}
-              >
-                Programs
-              </a>
-
-              {openDropdown === "programs" && (
-                <div className="dropdown-menu show p-3 mega-dropdown">
-                  <div className="table-responsive">
-                    <table className="table table-borderless m-0">
-                      <thead>
-                        <tr>
-                          <th>Course Level</th>
-                          <th>Programs</th>
-                          <th>Study Mode</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            {Object.keys(programData).map((level) => (
-                              <button
-                                key={level}
-                                className={`dropdown-link btn-sm w-100 text-start mb-1 ${
-                                  activeLevel === level ? "active-stream" : ""
-                                }`}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setActiveLevel(level);
-                                }}
-                              >
-                                {level}
-                              </button>
-                            ))}
-                          </td>
-                          <td>
-                            {programData[activeLevel].programs.map((program, i) => (
-                              <a
-                                key={i}
-                                href="#"
-                                className="dropdown-link d-block mb-1"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {program}
-                              </a>
-                            ))}
-                          </td>
-                          <td>
-                            {programData[activeLevel].studyModes.map((mode, i) => (
-                              <a
-                                key={i}
-                                href="#"
-                                className="dropdown-link d-block mb-1"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {mode}
-                              </a>
-                            ))}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
-            </li>
-
-            {/* More Mega Dropdown */}
-            <li className="nav-item dropdown mega-parent">
-              <a
-                className="nav-link dropdown-toggle text-white"
-                href="#"
-                id="moreDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                More
-              </a>
-              <div className="dropdown-menu p-3 mega-dropdown">
-                <div className="table-responsive">
-                  <table className="table table-borderless m-0">
-                    <thead>
-                      <tr>
-                        <th>Resources</th>
-                        <th>Why CollegeSewa</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><Link to="/contact" className="dropdown-link" href="#">Contact Us</Link></td>
-                        <td><p >10,000+ Colleges</p></td>
-                      </tr>
-                      <tr>
-                        <td><Link to="/blog" className="dropdown-link" href="#">Blogs</Link></td>
-                        <td><p >Expert Support</p></td>
-                      </tr>
-                      <tr>
-                        <td><Link className="dropdown-link" href="#">Ask Question</Link></td>
-                        <td><p >Real Reviews</p></td>
-                      </tr>
-                      <tr>
-                        <td><Link to="/Counselling" className="dropdown-link" href="#">Video Call</Link></td>
-                        <td><p>Free Guidance</p></td>
-                      </tr>
-                      <tr>
-                        <td><Link  to="/Counselling" className="dropdown-link" href="#">Chat</Link></td>
-                        <td><p>5L+ Students</p></td>
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </li>
 
-            {/* Compare and Counselling */}
-            <li className="nav-item">
-              <a className="nav-link text-white" href="#">Compare</a>
+            {/* ======================= PROGRAMS ======================= */}
+            <li className="nav-item dropdown position-static">
+              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                Programs
+              </a>
+
+              <div className="dropdown-menu mega-menu p-4">
+                <div className="row">
+                  <div className="col-4 mega-left">
+                    <a onMouseEnter={() => setProgramSection("top-programs")}>Top Programs</a>
+                    <a onMouseEnter={() => setProgramSection("degree-programs")}>Programs by Degree</a>
+                    <a onMouseEnter={() => setProgramSection("stream-programs")}>Programs by Stream</a>
+                  </div>
+
+                  <div className="col-8 mega-right">
+
+                    {programSection === "top-programs" && (
+                      <div>
+                        <h6 className="mega-heading">Popular Programs</h6>
+                        <a>B.Tech CSE</a>
+                        <a>MBA Finance</a>
+                        <a>BCA</a>
+                        <a>MBBS</a>
+                      </div>
+                    )}
+
+                    {programSection === "degree-programs" && (
+                      <div>
+                        <h6 className="mega-heading">Programs by Degree</h6>
+                        <a>Bachelor Programs</a>
+                        <a>Master Programs</a>
+                        <a>Diploma Courses</a>
+                      </div>
+                    )}
+
+                    {programSection === "stream-programs" && (
+                      <div>
+                        <h6 className="mega-heading">Streams</h6>
+                        <a>Engineering</a>
+                        <a>Management</a>
+                        <a>Science</a>
+                        <a>Arts</a>
+                      </div>
+                    )}
+
+                  </div>
+                </div>
+              </div>
             </li>
-            <li className="nav-item">
-              <a className="nav-link text-white" href="#">Counselling</a>
+
+            {/* ======================= EXAMS ======================= */}
+            <li className="nav-item dropdown position-static">
+              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                Exams
+              </a>
+
+              <div className="dropdown-menu mega-menu p-4">
+                <div className="row">
+
+                  <div className="col-4 mega-left">
+                    <a onMouseEnter={() => setExamSection("top-exams")}>Top Exams</a>
+                    <a onMouseEnter={() => setExamSection("exam-type")}>Exams by Type</a>
+                    <a onMouseEnter={() => setExamSection("exam-stream")}>Exams by Stream</a>
+                  </div>
+
+                  <div className="col-8 mega-right">
+
+                    {examSection === "top-exams" && (
+                      <div>
+                        <h6 className="mega-heading">Popular Exams</h6>
+                        <a>JEE Main</a>
+                        <a>NEET</a>
+                        <a>CAT</a>
+                        <a>GATE</a>
+                      </div>
+                    )}
+
+                    {examSection === "exam-type" && (
+                      <div>
+                        <h6 className="mega-heading">Exam Types</h6>
+                        <a>National Level</a>
+                        <a>State Level</a>
+                        <a>University Level</a>
+                      </div>
+                    )}
+
+                    {examSection === "exam-stream" && (
+                      <div>
+                        <h6 className="mega-heading">Streams</h6>
+                        <a>Engineering Exams</a>
+                        <a>Medical Exams</a>
+                        <a>MBA Exams</a>
+                      </div>
+                    )}
+
+                  </div>
+
+                </div>
+              </div>
             </li>
+
+            {/* LINKS */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/blog">Blogs</Link>
+            </li>
+
+            
           </ul>
-         
+          <ul className="navbar-nav ms-auto align-items-lg-center">
+            <li className="nav-item">
+              <Link className="btns ms-lg-3" to="/Counselling" style={{textDecoration:"none"}}>
+                Counselling
+              </Link>
+            </li>
 
+            {/* PROFILE DROPDOWN */}
+            <li className="nav-item dropdown">
+              <a className="nav-link" href="#" data-bs-toggle="dropdown">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                  width="35"
+                  height="35"
+                  className="rounded-circle profile-icon"
+                />
+              </a>
 
-          {/* Login Button */}
-          <div className="d-flex justify-content-left">
-            <Link to="/login" style={{textDecoration:'none'}} className="btn1 btn-login">
-              Login
-            </Link>
-          </div>
-           <form className="search-bar d-flex d-lg-none w-100  my-2">
-  <input
-    className="form-control search-input"
-    type="search"
-    placeholder="Search colleges, courses..."
-    aria-label="Search"
-  />
-  <button className="btn1 btn-search " type="submit">
-    Search
-  </button>
-</form>
+              <div className="dropdown-menu dropdown-menu-end profile-dropdown shadow">
+                <strong className="pb-2 d-block">Hello, Welcome to CollegeSewa</strong>
+
+                <div className="input-group mb-3">
+                  <input className="form-control" placeholder="Search goal..." />
+                  <span className="input-group-text"><i className="bi bi-search"></i></span>
+                </div>
+
+                <Link className="btn btn-warning w-100 mb-3">Login / Register</Link>
+
+                <div className="reward-box">
+                  <div className="fw-bold text-dark">Write a Review & Earn Up to ₹300</div>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
         </div>
       </div>
     </nav>

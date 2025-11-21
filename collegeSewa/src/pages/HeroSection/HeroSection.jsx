@@ -61,7 +61,7 @@ const HeroSection = () => {
             <div className="col-md-6 text-center hero-img-col position-relative">
   <div
     id="heroImageCarousel"
-    className="carousel slide shadow-lg rounded-4 overflow-hidden"
+    className="carousel slide shadow-lg rounded-2 overflow-hidden"
     data-bs-ride="carousel"
     data-bs-interval="3500"
     data-bs-pause="hover"
